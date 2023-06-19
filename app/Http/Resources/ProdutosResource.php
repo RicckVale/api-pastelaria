@@ -2,11 +2,10 @@
 
 namespace App\Http\Resources;
 
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserResource extends JsonResource
+class ProdutosResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,10 +15,11 @@ class UserResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'identify' => $this->id,
-            'name' => strtoupper($this->name),
-            'email' => $this->email,
-            'created' => Carbon::make($this->created_at)->format('Y-m-d'),
+            'id' => $this->id,
+            'nome' => $this->nome,
+            'preco' => $this->preco,
+            'imagem' => $this->imagem,
+            '_links' => $this->links()
         ];
     }
 }

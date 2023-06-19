@@ -1,14 +1,18 @@
 <?php
 
+use App\Http\Controllers\Api\ClientesController;
+use App\Http\Controllers\Api\PedidosController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::apiResource('/users', UserController::class);
-// Route::delete('/users/{id}', [UserController::class, 'destroy']);
-// Route::patch('/users/{id}', [UserController::class, 'update']);
-// Route::get('/users/{id}', [UserController::class, 'show']);
-// Route::get('/users', [UserController::class, 'index']);
-// Route::post('/users', [UserController::class, 'store']);
+// Route::apiResource('/clientes', ClientesController::class);
+Route::apiResource('/pedidos', PedidosController::class);
+Route::apiResource('/produtos', ProdutosCon::class);
+Route::delete('/clientes/{id}', [ClientesController::class, 'destroy']);
+Route::patch('/clientes/{id}', [ClientesController::class, 'update']);
+Route::get('/clientes/{id}', [ClientesController::class, 'show']);
+Route::get('/clientes', [ClientesController::class, 'index']);
+Route::post('/clientes', [ClientesController::class, 'store']);
 
 Route::get('/', function () {
     return response()->json([
