@@ -11,7 +11,7 @@ class StoreUpdateProdutosRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,14 +24,14 @@ class StoreUpdateProdutosRequest extends FormRequest
         $rules = [
             'nome' => 'required|string|max:255',
             'preco' => 'required|numeric',
-            'imagem' => 'required|file|mimes:jpeg,png,|max:1024',
+            'imagem' => 'required|file|mimes:jpeg,png,|max:2048',
         ];
 
         if ($this->method() === 'PATCH') {
             $rules = [
             'nome' => 'sometimes|string|max:255',
             'preco' => 'sometimes|numeric',
-            'imagem' => 'sometimes|file|mimes:jpeg,png,|max:1024',
+            'imagem' => 'sometimes|file|mimes:jpeg,png,|max:2048',
             ];
         }
 

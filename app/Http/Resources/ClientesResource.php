@@ -2,11 +2,14 @@
 
 namespace App\Http\Resources;
 
+use GDebrauwer\Hateoas\Traits\HasLinks;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ClientesResource extends JsonResource
 {
+    use HasLinks;
+
     /**
      * Transform the resource into an array.
      *
@@ -25,7 +28,8 @@ class ClientesResource extends JsonResource
             'complemento' => $this->complemento,
             'bairro' => $this->bairro,
             'cep' => $this->cep,
-            'data_de_cadastro' => $this->created_at,
+            'data_cadastro' => $this->created_at,
+            '_links' => $this->links(),
         ];
     }
 }

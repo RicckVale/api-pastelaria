@@ -17,7 +17,7 @@ class StoreUpdateClientesRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
     public function rules(): array
     {
@@ -44,9 +44,9 @@ class StoreUpdateClientesRequest extends FormRequest
                 'complemento' => 'nullable|string|max:255',
                 'bairro' => 'sometimes|string|max:255',
                 'cep' => 'sometimes|string|max:10',
-                'data_de_cadastro' => 'sometimes|date',
             ];
         }
+
         return $rules;
     }
 }

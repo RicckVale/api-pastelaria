@@ -6,20 +6,26 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "brick/money": "^0.8.0",
         "doctrine/dbal": "^3.6",
+        "gdebrauwer/laravel-hateoas": "^2.1",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^10.0",
+        "intervention/image": "^2.7",
+        "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8"
     },
     "require-dev": {
+        "brianium/paratest": "^7.1",
         "fakerphp/faker": "^1.9.1",
+        "laravel-lang/common": "^3.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
-        "phpunit/phpunit": "^10.0",
-        "spatie/laravel-ignition": "^2.0"
+        "phpunit/phpunit": "^10.1",
+        "spatie/laravel-ignition": "^2.0",
+        "ext-intl": "*"
     },
     "autoload": {
         "psr-4": {
